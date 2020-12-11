@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Box<E> {
 
     float sumBox;
-    ArrayList <E> arrayList = new ArrayList();
+    ArrayList<E> arrayList = new ArrayList();
 
     public Box() {
 
@@ -29,8 +29,9 @@ public class Box<E> {
 //        System.out.println("Яблок: " + this.sumApple + ". Апельсинов: " + this.sumOrange);
 
     }
-    public boolean compare(float sum){
-        if (sumBox==sum){
+
+    public boolean compare(float sum) {
+        if (sumBox == sum) {
             return true;
         }
         return false;
@@ -44,16 +45,16 @@ public class Box<E> {
 //        System.out.println(object.getWeig());;
 //    }
 
-//    public float getWeight(E object){
+    //    public float getWeight(E object){
 //
 //
 //    }
-    public float getWeight(E object){
-        if (object instanceof Apple){
+    public float getWeight(E object) {
+        if (object instanceof Apple) {
             float sum = arrayList.size() * Apple.getWeight();
             this.sumBox = sum;
             return sum;
-        }else if (object instanceof Orange){
+        } else if (object instanceof Orange) {
             float sum = arrayList.size() * Orange.getWeight();
             this.sumBox = sum;
             return sum;
@@ -64,4 +65,10 @@ public class Box<E> {
 //
     }
 
+    public void cutBox(Box box) {
+        for (E e : arrayList) {
+            box.arrayList.add(e);
+        }
+            arrayList.clear();
+    }
 }
