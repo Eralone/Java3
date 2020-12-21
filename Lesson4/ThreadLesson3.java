@@ -2,7 +2,7 @@ package Lesson4;
 
 import java.io.IOException;
 
-public class ThreadLesson3 {
+public class ThreadLesson3 extends Thread {
     float status = 1.0f;
 
     public synchronized void addA(int i){
@@ -17,7 +17,11 @@ public class ThreadLesson3 {
                 }
             }
         }
-
+        try {
+            sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("Отсканированна " + i + " страница");
         status = status + 0.5f;
         notify();
@@ -34,6 +38,11 @@ public class ThreadLesson3 {
                     e.printStackTrace();
                 }
             }
+        }
+        try {
+            sleep(50);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         System.out.println("Отпечатанна " + i + " страница");
         status = status + 0.5f;
@@ -66,7 +75,6 @@ class addThreadLs3{
             }).start();
     }
 }
-
 
 class MainLs3{
     public static void main(String[] args) {
