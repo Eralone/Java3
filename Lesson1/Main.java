@@ -36,6 +36,22 @@ public class Main {
         System.out.println("Равны ли эти коробки? Ответ: " + boxAp.compare(boxOr.getWeight(orange1)));
 
 
+        Box<Orange> boxOr1 = new Box();
+
+        boxOr.cutBox(boxOr1);
+
+
+        System.out.println("После вырезки \nБокс Апельсинов(старый) содержит:");
+        for (Orange orange : boxOr.arrayList) {
+            System.out.println(orange);
+        }
+
+        System.out.println("Бокс Апельсинов(новый) содержит:");
+        for (Orange orange : boxOr1.arrayList) {
+            System.out.println(orange);
+        }
+
+
 
 
 //        for (Object o : boxAp.arrayList) {
